@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.5.
 
+## Offline Capability Testing
+
+1. ng build --prod
+2. http-server ./dist/service-worker -c-1 -o
+3. Open Chrome inspect tool > Network Tab > Set 'Throttling' to offline
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
