@@ -12,7 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { PlotlyModule } from 'angular-plotly.js';
 import * as PlotlyJS from 'plotly.js/dist/plotly.js';
 import { HttpClientModule } from '@angular/common/http';
-import { TableComponent } from './components/dataComponents/table/table.component';
+import { CovidTrackerComponent } from './components/dataComponents/covidTracker/covidTracker.component';
 PlotlyModule.plotlyjs = PlotlyJS;
 
 @NgModule({
@@ -20,7 +20,7 @@ PlotlyModule.plotlyjs = PlotlyJS;
     AppComponent,
     MapComponent,
     GraphComponent,
-    TableComponent,
+    CovidTrackerComponent,
   ],
   imports: [
     BrowserModule,

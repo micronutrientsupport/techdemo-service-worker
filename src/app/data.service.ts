@@ -8,21 +8,32 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class DataService {
 
-  public data;
+  public popData;
 
   constructor(
     private http: HttpClient,
     private parser: Papa,
   ) { }
 
-  public getData(): Promise<Array<object>> {
+  public getPopulationData(): Promise<Array<object>> {
     const url = 'https://raw.githubusercontent.com/plotly/datasets/master/2014_us_cities.csv';
     return this.http.get(url, { responseType: 'text' }).toPromise()
       .then((data) => {
-        this.data = this.parser.parse(data).data;
-        return this.data;
+        this.popData = this.parser.parse(data).data;
+        return this.popData;
       })
       .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  public getCovidData(): Promise<Array<object>> {
+    const url = 'https://corona-api.com/countries';
+    return this.http.get(url, { responseType: 'json' }).toPromise()
+      .then((data) => {
+        // tslint:disable-next-line: no-string-literal
+        return data['data'];
+      }).catch((err) => {
         console.log(err);
       });
   }
