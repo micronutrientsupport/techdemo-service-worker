@@ -25,6 +25,17 @@
           "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
         ]
       }
+    },
+    {
+      "name": "external-apis",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "resources": {
+        "urls": [
+          "https://corona-api.com/countries",
+          "https://raw.githubusercontent.com/plotly/datasets/master/2014_us_cities.csv"
+        ]
+      }
     }
   ]
 }
